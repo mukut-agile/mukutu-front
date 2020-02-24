@@ -27,3 +27,8 @@ export const OptionContainer = styled(Link)`
     padding: 10px 15px;
     cursor: pointer;
 `
+
+export const OptionLogoutContainer = styled.div`
+  padding: 10px 15px;
+  cursor: pointer;
+`;
