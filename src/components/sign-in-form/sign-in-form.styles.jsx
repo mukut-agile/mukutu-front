@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-export const SignInContainer = styled.div`
+export const SignInFormContainer = styled.div`
     width: 100%;
-    height: 700px;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 `

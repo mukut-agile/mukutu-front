@@ -11,6 +11,7 @@ const shrinkLabelStyles = css`
 
 export const GroupContainer = styled.div`
     position: relative;
+    width: 70%;
     margin: 45px 0;
 
     input[type='password'] {
@@ -47,7 +48,7 @@ export const FormInputLabel = styled.label`
     position: absolute;
     pointer-events: none;
     left: 5px;
-    top: 10px;
+    top: 40px;
     transition: 300ms ease all;
 
     &.shrink {

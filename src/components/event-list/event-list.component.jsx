@@ -8,8 +8,6 @@ import { EVENT_LIST } from './event-list.js'
 
 const EventList = () => {
 
-    EVENT_LIST.events.map(event => console.log(event));
-
     return(
         <EventListContainer>
             {
