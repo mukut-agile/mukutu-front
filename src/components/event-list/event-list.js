@@ -29,6 +29,6 @@ export const EVENT_LIST = {
             imageUrl: "images/basketball.jpeg",
             address: "香川県",
             id: 5,
-        }
+        },
     ]
 };

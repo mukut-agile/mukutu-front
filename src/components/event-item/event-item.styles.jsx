@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const EventItemContainer = styled.div`
-    width: 100%;
-    height: 100%;
+    width: 15%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;

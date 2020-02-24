@@ -21,7 +21,10 @@ export const HomePageTopContainer = styled.div`
 export const HomePageImageContainer = styled.div`
   width: 100%;
   height: 100%;
-  background-image: url("../../images/study.jpg");
+  background-size: cover;
+  background-position: center;
+  background-image: url("images/study.jpg");
+  filter: blur(5px) grayscale(20%);
 `
 
 export const HomePageContentContainer = styled.div`
@@ -31,18 +34,17 @@ export const HomePageContentContainer = styled.div`
   align-items: center;
   justify-content: center;
   color: white;
-  opacity: 0.7;
   position: absolute;
 `;
 
 export const HomePageContentTitle = styled.span`
   font-weight: bold;
   font-size: 26px;
-  color: black;
+  color: white;
 `;
 
 export const HomePageContentSubtitle = styled.span`
   font-weight: lighter;
   font-size: 16px;
-  color: black;
+  color: white;
 `;
