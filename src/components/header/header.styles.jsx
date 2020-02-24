@@ -1,30 +1,29 @@
 import styled from 'styled-components';
-
 import { Link } from 'react-router-dom';
 
-export const HeaderContainer = styled.div`
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
+export const HeaderContainer = styled.div` 
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+`;
 
-export const HeaderLogo = styled(Link)`
-  width: 30%;
-  height: 100%;
-`
+export const LogoContainer = styled(Link)`
+    height: 100%;
+    width: 70px;
+    padding: 25px;
+`;
 
-export const HeaderOptions = styled.div`
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
+export const OptionsContainer = styled.div`
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+`;
 
-export const HeaderOption = styled(Link)`
-  width: 20%;
-  height: auto;
-  margin: 0 5px;
+export const OptionContainer = styled(Link)`
+    padding: 10px 15px;
+    cursor: pointer;
 `
