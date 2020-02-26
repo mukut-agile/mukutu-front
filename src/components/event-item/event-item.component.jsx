@@ -2,11 +2,11 @@ import React from 'react';
 
 import { EventItemContainer, EventItemBackgroundImageContainer, EventItemTitle, EventItemAddress } from './event-item.styles';
 
-const EventItem = ({ imageUrl, title, address }) => (
+const EventItem = ({ event_title, place }) => (
   <EventItemContainer>
-    <EventItemBackgroundImageContainer imageUrl={imageUrl}/>
-    <EventItemTitle>{title}</EventItemTitle>
-    <EventItemAddress>{address}</EventItemAddress>
+    <EventItemBackgroundImageContainer imageUrl=""/>
+    <EventItemTitle>{event_title}</EventItemTitle>
+    <EventItemAddress>{place}</EventItemAddress>
   </EventItemContainer>
 );
 
