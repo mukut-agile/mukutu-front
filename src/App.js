@@ -21,11 +21,16 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
 
-      console.log(user);
-    });
+    return fetch("http://weather.livedoor.com/forecast/webservice/json/v1?city=400040", {mode: "no-cors"})
+      .then(response => console.log(response))
+      .then(responseJson => {
+        console.log(responseJson)
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
   }
 
   componentWillUnmount() {
@@ -33,6 +38,7 @@ class App extends React.Component {
   }
 
   render() {
+
     return (
       <div className="App">
         <Header currentUser={this.state.currentUser} />

@@ -37,6 +37,7 @@ const SignInForm = () => {
           onChange={handleChange}
           required
         />
+        <CustomButton>登録</CustomButton>
         <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
           Google
         </CustomButton>
