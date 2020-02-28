@@ -14,18 +14,31 @@ class App extends React.Component {
     super();
 
     this.state = {
-      currentUser: null
+      currentUser: null,
+      events: []
     };
   }
 
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState({ currentUser: user });
 
       console.log(user);
     });
+
+    fetch("https://mukutapi.herokuapp.com/api/v1/events")
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({events: this.state.events.concat(result)})
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 
   componentWillUnmount() {
@@ -33,16 +46,20 @@ class App extends React.Component {
   }
 
   render() {
+
+    console.log(this.state.events);
+
     return (
       <div className="App">
         <Header currentUser={this.state.currentUser} />
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" render={() => <HomePage events={this.state.events} />} />
           <Route 
             exact 
             path="/signin"
             render={() => 
-              this.state.currentUser ? <Redirect to='/'/> : <SignIn />}
+              this.state.currentUser ? <Redirect to='/'/> : <SignIn />
+            }
           />
         </Switch>
       </div>

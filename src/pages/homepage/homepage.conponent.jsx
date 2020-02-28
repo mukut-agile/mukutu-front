@@ -4,7 +4,7 @@ import EventList from '../../components/event-list/event-list.component';
 
 import { HomePageTopContainer, HomePageContainer, HomePageImageContainer, HomePageContentContainer, HomePageContentTitle, HomePageContentSubtitle } from './homepage.styles';
 
-const HomePage = () => (
+const HomePage = ({ events }) => (
   <HomePageContainer>
     <HomePageTopContainer>
       <HomePageImageContainer />
@@ -17,7 +17,7 @@ const HomePage = () => (
         </HomePageContentSubtitle>
       </HomePageContentContainer>
     </HomePageTopContainer>
-    <EventList />
+    <EventList events={events} />
   </HomePageContainer>
 );
 
