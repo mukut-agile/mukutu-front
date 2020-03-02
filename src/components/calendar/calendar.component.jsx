@@ -87,7 +87,7 @@ class Calendar extends React.Component {
                         if (!value) {
                             return 'color-empty';
                         }
-                            return `color-scale-${value.count}`;
+                            return `color-gitlab-${value.count}`;
                     }}
                     onClick={value => alert(` ${value.date}`)}
                     showMonthLabels={false}
