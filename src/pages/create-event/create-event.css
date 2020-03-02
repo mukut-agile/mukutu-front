@@ -1,0 +1,43 @@
+.Title-container {
+}
+.Title {
+  text-align: center;
+}
+
+.Form-event {
+    width: 80%;
+    margin: 0px auto;
+
+}
+.Left-side-content {
+    float: left;
+    width: 49%;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+.Right-side-content {
+    float: right;
+    width: 50%;
+}
+.Form-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.Button-submit {
+  text-align: center;
+}
+button {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #248;
+    color: #fff;
+    border-style: none;
+    border-radius: 10px;
+}
+button:hover {
+      background-color: #24d;
+}
+
