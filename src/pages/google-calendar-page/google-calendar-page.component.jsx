@@ -21,7 +21,6 @@ const GoogleCalendarPage = ({ history }) => (
         isGoogleSignIn 
         onClick={() => {
           handleAuthClickAndEvents()
-          alert("イベント投稿完了")
           history.push('/')
         }} 
     >

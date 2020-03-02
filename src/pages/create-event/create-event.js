@@ -53,9 +53,12 @@ class CreateEvent extends Component {
     }
 
     handleSubmit() {
-        postData(`https://mukutapi.herokuapp.com/api/v1/events`, this.state.data)
-        .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
-        .catch(error => console.error(error));
+        postData(
+          `https://mukut-back.herokuapp.com/api/v1/events`,
+          this.state.data
+        )
+          .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+          .catch(error => console.error(error));
 
         function postData(url = ``, data = {}) {
         // 既定のオプションには * が付いています
