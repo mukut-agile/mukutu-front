@@ -2,11 +2,14 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { auth } from './firebase/firebase.urils';
+import { handleClientLoad } from "./google/google.utils";
 
 import Header from './components/header/header.component';
 import HomePage from './pages/homepage/homepage.conponent';
 import SignIn from './pages/sign-in/sign-in.component';
+import GoogleCalendarPage from './pages/google-calendar-page/google-calendar-page.component';
 import CreateEvent from './pages/create-event/create-event';
+
 
 import './App.css';
 
@@ -30,16 +33,18 @@ class App extends React.Component {
       console.log(user);
     });
 
-    fetch("https://mukutapi.herokuapp.com/api/v1/events")
+    fetch("https://mukut-back.herokuapp.com/api/v1/events")
       .then(res => res.json())
       .then(
         result => {
-          this.setState({events: this.state.events.concat(result)})
+          this.setState({ events: this.state.events.concat(result) });
         },
         error => {
           console.log(error);
         }
       );
+      
+      handleClientLoad();
   }
 
   componentWillUnmount() {
@@ -67,6 +72,7 @@ class App extends React.Component {
             }
           />
           <Route exact path="/event" component={CreateEvent} />
+          <Route exact path="/mypage" component={GoogleCalendarPage} />
         </Switch>
       </div>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './create-event.css';
-import EventInput from '../../components/event-input/event-input.component';
-import Calendar from '../../components/calendar/calendar.component';
+import EventInput from "../../components/event-input/event-input.component";
+import Calendar from '../../components/calendar/calendar.component.jsx';
 
 class CreateEvent extends Component {
     constructor(props) {
@@ -88,8 +88,8 @@ class CreateEvent extends Component {
                         <div className="Form-wrapper">
                             {this.renderEventInput("イベント名", "event_title","text")}
                             {this.renderEventInput("概要", "overview","text")}
-                            {this.renderEventInput("開始時間", "start_datetime","text")}
-                            {this.renderEventInput("終了時間", "end_datetime","text")}
+                            {this.renderEventInput("開始日時", "start_datetime","text")}
+                            {this.renderEventInput("終了日時", "end_datetime","text")}
                             {this.renderEventInput("会場", "place","text")}
                             {this.renderEventInput("参加費", "fee","text")}
                             {this.renderEventInput("募集人数", "max_member","text")}

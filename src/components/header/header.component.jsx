@@ -15,6 +15,7 @@ const Header = ({ currentUser }) => (
       )}
       <OptionContainer to="/event">イベント作成</OptionContainer>
       <OptionContainer to="/community">コミュニティ作成</OptionContainer>
+      <OptionContainer to="/mypage">マイページ</OptionContainer>
     </OptionsContainer>
   </HeaderContainer>
 );
