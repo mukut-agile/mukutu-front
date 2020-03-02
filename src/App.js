@@ -6,6 +6,7 @@ import { auth } from './firebase/firebase.urils';
 import Header from './components/header/header.component';
 import HomePage from './pages/homepage/homepage.conponent';
 import SignIn from './pages/sign-in/sign-in.component';
+import CreateEvent from './pages/create-event/create-event';
 
 import './App.css';
 
@@ -53,14 +54,19 @@ class App extends React.Component {
       <div className="App">
         <Header currentUser={this.state.currentUser} />
         <Switch>
-          <Route exact path="/" render={() => <HomePage events={this.state.events} />} />
-          <Route 
-            exact 
+          <Route
+            exact
+            path="/"
+            render={() => <HomePage events={this.state.events} />}
+          />
+          <Route
+            exact
             path="/signin"
-            render={() => 
-              this.state.currentUser ? <Redirect to='/'/> : <SignIn />
+            render={() =>
+              this.state.currentUser ? <Redirect to="/" /> : <SignIn />
             }
           />
+          <Route exact path="/event" component={CreateEvent} />
         </Switch>
       </div>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './create-event.css';
-import EventInput from './components/event-input/event-input.component';
-import Calendar from './components/calendar/calendar.component';
+import EventInput from '../../components/event-input/event-input.component';
+import Calendar from '../../components/calendar/calendar.component';
 
 class CreateEvent extends Component {
     constructor(props) {
