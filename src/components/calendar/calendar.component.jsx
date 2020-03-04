@@ -1,7 +1,7 @@
 import React from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
-import {CalendarContainer, CalendarMonth, Month, Samples, Sample0, Sample1, Sample2, Sample3, Sample4, CalendarDays, CalendarDay, Sunday, WeekDays, Saturday, RadioButtonWrapper,　Category, RadioCategoryWrapper, RadioCategoryName, RadioButtons, RadioLabel} from './calendar.styles';
+import {CalendarContainer, CalendarMonth, Month, Samples, Sample, Sample0, Sample1, Sample2, Sample3, Sample4, CalendarDays, CalendarDay, Sunday, WeekDays, Saturday, RadioButtonWrapper,　Category, RadioCategoryWrapper, RadioCategoryName, RadioButtons, RadioLabel} from './calendar.styles';
 import calendarData from './calendar-data.js';
 
 class Calendar extends React.Component {
@@ -120,8 +120,9 @@ class Calendar extends React.Component {
                 <CalendarMonth>
                     <Month>3月</Month>
                     <Samples>
-                        <Sample0>暇人</Sample0>
-                        <Sample1>少</Sample1>
+                        <Sample>暇人</Sample>
+                        <Sample0>少</Sample0>
+                        <Sample1></Sample1>
                         <Sample2></Sample2>
                         <Sample3></Sample3>
                         <Sample4>多</Sample4>
