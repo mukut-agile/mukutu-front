@@ -20,30 +20,47 @@ export const Samples = styled.div`
     top: 0px;
     right: 0px;
 `
-export const Sample0 = styled.div`
+export const Sample = styled.div`
     background-color: #FFF;
-    width: calc(100% / 5 - 0px);
+    width: calc(100% / 6 - 0px);
     font-size: 12px;
     margin: auto 0px;
 `
+export const Sample0 = styled.div`
+    background-color: #FFF;
+    width: calc(100% / 6 - 0px);
+    font-size: 15px;
+    margin: auto 0px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+`
 export const Sample1 = styled.div`
     background-color: #FFD5EC;
-    width: calc(100% / 5 - 0px);
-    font-size: 15px;
+    width: calc(100% / 6 - 0px);
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 `
 export const Sample2 = styled.div`
     background-color: #FF97C2;
-    width: calc(100% / 5 - 0px);
+    width: calc(100% / 6 - 0px);
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 
 `
 export const Sample3 = styled.div`
     background-color: #FF5192;
-    width: calc(100% / 5 - 0px);
+    width: calc(100% / 6 - 0px);
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 `
 export const Sample4 = styled.div`
     background-color: #FF0461;
-    width: calc(100% / 5 - 0px);
+    width: calc(100% / 6 - 0px);
     font-size: 15px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
 `
 export const CalendarDays = styled.div`
     display: flex;
