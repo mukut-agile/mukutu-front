@@ -26,7 +26,6 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-
     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
       this.setState({ currentUser: user });
 
@@ -43,16 +42,29 @@ class App extends React.Component {
           console.log(error);
         }
       );
-      
-      handleClientLoad();
+
+    handleClientLoad();
   }
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
 
-  render() {
+  handleUpdate = () => {
+    console.log("handleupdate")
+    fetch("https://mukut-back.herokuapp.com/api/v1/events")
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({ events: result });
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
 
+  render() {
     console.log(this.state.events);
 
     return (
@@ -71,7 +83,11 @@ class App extends React.Component {
               this.state.currentUser ? <Redirect to="/" /> : <SignIn />
             }
           />
-          <Route exact path="/event" component={CreateEvent} />
+          <Route
+            exact
+            path="/event"
+            render={() => <CreateEvent handleUpdate={this.handleUpdate}/>}
+          />
           <Route exact path="/mypage" component={GoogleCalendarPage} />
         </Switch>
       </div>

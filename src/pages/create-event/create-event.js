@@ -76,8 +76,9 @@ class CreateEvent extends Component {
         data.start_datetime = `${data.event_date} ${data.start_datetime}`;
         data.end_datetime = `${data.event_date} ${data.end_datetime}`;
         delete data.event_date;
-        postData(`https://mukutapi.herokuapp.com/api/v1/events`, data)
+        postData(`https://mukut-back.herokuapp.com/api/v1/events`, data)
         .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+        .then(() => this.props.handleUpdate())
         .catch(error => console.error(error));
         this.props.history.push('/');
 
