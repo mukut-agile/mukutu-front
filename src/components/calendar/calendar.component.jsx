@@ -156,8 +156,8 @@ class Calendar extends React.Component {
                         <g>
                             {element}
                             <text
-                                x={element["props"].x}
-                                y={element["props"].y + 10}
+                                x={element["props"].x + 0.2}
+                                y={element["props"].y + 9.8}
                                 style={{
                                     fontSize: "3px",
                                     fill: "#000"
