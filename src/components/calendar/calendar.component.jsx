@@ -168,7 +168,7 @@ class Calendar extends React.Component {
                     )}
                 />
                 <RadioButtonWrapper>
-                    <Category>ユーザー</Category>
+                    <Category>カレンダーフィルタリング</Category>
                     <RadioCategoryWrapper>
                         <RadioCategoryName>性別</RadioCategoryName>
                         <RadioButtons>{listItemsGender}</RadioButtons>
