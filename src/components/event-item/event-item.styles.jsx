@@ -6,7 +6,7 @@ export const EventItemContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 1px black;
+    border: solid 1px lightgray;
     margin: 10px 15px;
 `
 
@@ -24,7 +24,7 @@ export const EventItemTitle = styled.div`
   align-items: center;
   font-weight: bold;
   font-size: 14px;
-  color: black;
+  color: #444;
 `
 export const EventItemAddress = styled.div`
   width: 90%;
@@ -32,5 +32,5 @@ export const EventItemAddress = styled.div`
   display: flex;
   align-items: flex-end;
   font-size: 12px;
-  color: black;
+  color: #444;
 `;
