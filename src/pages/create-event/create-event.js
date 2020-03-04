@@ -119,7 +119,7 @@ class CreateEvent extends Component {
                 <form className="Form-event" action="javascript:void(0)" onSubmit={this.handleSubmit}>
                     <div className="Left-side-content">
                         <div className="Form-wrapper">
-                            {this.renderEventInput("イベント名", "event_title","text", "令和2年 第3回AgileBootChampフットサル大会")}
+                            {this.renderEventInput("イベント名", "event_title","text", "令和2年 第3回AgileBootCampフットサル大会")}
                             <ShowEventDate eventDate={this.state.data.event_date}/>
                             <div className="Event-time">
                                 {this.renderStartTimeInput("開始時間")}
