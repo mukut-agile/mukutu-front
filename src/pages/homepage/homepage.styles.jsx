@@ -14,7 +14,7 @@ export const HomePageTopContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid #444;
   margin-bottom: 40px;
 `;
 
@@ -41,10 +41,12 @@ export const HomePageContentTitle = styled.span`
   font-weight: bold;
   font-size: 26px;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 `;
 
 export const HomePageContentSubtitle = styled.span`
   font-weight: lighter;
   font-size: 16px;
   color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 `;
