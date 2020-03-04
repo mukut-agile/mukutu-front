@@ -23,7 +23,7 @@ export const HomePageImageContainer = styled.div`
   height: 100%;
   background-size: cover;
   background-position: center;
-  background-image: url("images/study.jpg");
+  background-image: url("images/study.jpeg");
   filter: blur(5px) grayscale(20%);
 `
 

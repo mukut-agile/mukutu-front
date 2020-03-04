@@ -12,7 +12,7 @@ const EventList = ({ events }) => {
       <EventListContainer>
         {
             events.map(({ id, ...otherProps }) => (
-          <EventItem key={id} {...otherProps} />
+          <EventItem key={id} {...otherProps} imageUrl={ `images/${Math.random() * 8 | 0}.jpeg` } />
         ))}
       </EventListContainer>
     );
