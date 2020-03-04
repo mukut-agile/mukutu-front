@@ -9,10 +9,19 @@ export const EventInputContainer = styled.div`
 export const LabelInput = styled.label`
     padding-left: 15px;
     display: block;
+    font-weight: bold;
 `
 export const FormInput = styled.input`
     width: 80%;
-    height: 18px;
-    border-radius: 10px;
+    height: 25px;
+    font-size: 15px;
     margin: 0px 10%;
+    border: none;
+    outline: none;
+`
+
+export const InputUnderLine = styled.div`
+    width: 80%;
+    margin: 0px 10%;
+    border-top: 1px solid #c2c2c2;
 `
