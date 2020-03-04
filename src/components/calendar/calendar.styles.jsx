@@ -45,7 +45,6 @@ export const Sample4 = styled.div`
     width: calc(100% / 5 - 0px);
     font-size: 15px;
 `
-
 export const CalendarDays = styled.div`
     display: flex;
     justify-content: flex-start;

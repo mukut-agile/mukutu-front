@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './create-event.css';
-import EventInput from "../../components/event-input/event-input.component";
-import Calendar from '../../components/calendar/calendar.component.jsx';
+import { withRouter } from 'react-router';
+import EventInput from '../../components/event-input/event-input.component';
+import TimeInput from '../../components/time-input/time-input';
+import ShowEventDate from '../../components/show-event-date/show-event-date.component';
+import Calendar from '../../components/calendar/calendar.component';
 
 class CreateEvent extends Component {
     constructor(props) {
@@ -11,14 +14,17 @@ class CreateEvent extends Component {
                 owner_id: 1,
                 event_title: '',
                 overview: '',
-                start_datetime: '',
-                end_datetime: '',
+                event_date:　'2020-03-06',
+                start_datetime: '00:00',
+                end_datetime: '00:00',
                 place: '',
                 fee: '',
                 max_member: '',
             },
         };
         this.handleChange = this.handleChange.bind(this)
+        this.handleStartTimeChange = this.handleStartTimeChange.bind(this)
+        this.handleEndTimeChange = this.handleEndTimeChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -30,12 +36,6 @@ class CreateEvent extends Component {
                 break;
             case 'overview':
                 data.overview = event.target.value;
-                break;
-            case 'start_datetime':
-                data.start_datetime = event.target.value;
-                break;
-            case 'end_datetime':
-                data.end_datetime = event.target.value;
                 break;
             case 'place':
                 data.place = event.target.value;
@@ -52,13 +52,34 @@ class CreateEvent extends Component {
         });
     }
 
+    changeDate(date) {
+        const data = this.state.data;
+        data.event_date = date;
+        this.setState({data: data});
+        console.log(this.state.data)
+    }
+
+    handleStartTimeChange (event) {
+        const data = this.state.data;
+        data.start_datetime = event.target.value;
+        this.setState({data: data});
+    }
+
+    handleEndTimeChange (event) {
+        const data = this.state.data;
+        data.end_datetime = event.target.value;
+        this.setState({data: data});
+    }
+
     handleSubmit() {
-        postData(
-          `https://mukut-back.herokuapp.com/api/v1/events`,
-          this.state.data
-        )
-          .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
-          .catch(error => console.error(error));
+        const data = this.state.data;
+        data.start_datetime = `${data.event_date} ${data.start_datetime}`;
+        data.end_datetime = `${data.event_date} ${data.end_datetime}`;
+        delete data.event_date;
+        postData(`https://mukutapi.herokuapp.com/api/v1/events`, data)
+        .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+        .catch(error => console.error(error));
+        this.props.history.push('/');
 
         function postData(url = ``, data = {}) {
         // 既定のオプションには * が付いています
@@ -80,6 +101,14 @@ class CreateEvent extends Component {
         return(<EventInput label={label} type={type} name={property} value={this.state.data.property} onChange={this.handleChange}/>);
     }
 
+    renderStartTimeInput(label) {
+        return(<TimeInput label={label} value={this.state.value} onChange={this.handleStartTimeChange}/>);
+    }
+
+    renderEndTimeInput(label) {
+        return(<TimeInput label={label} value={this.state.value} onChange={this.handleEndTimeChange}/>);
+    }
+
     render() {
         return (
             <div className="App">
@@ -90,16 +119,19 @@ class CreateEvent extends Component {
                     <div className="Left-side-content">
                         <div className="Form-wrapper">
                             {this.renderEventInput("イベント名", "event_title","text")}
+                            <ShowEventDate eventDate={this.state.data.event_date}/>
+                            <div className="Event-time">
+                                {this.renderStartTimeInput("開始時間")}
+                                {this.renderEndTimeInput("終了時間")}
+                            </div>
                             {this.renderEventInput("概要", "overview","text")}
-                            {this.renderEventInput("開始日時", "start_datetime","text")}
-                            {this.renderEventInput("終了日時", "end_datetime","text")}
                             {this.renderEventInput("会場", "place","text")}
                             {this.renderEventInput("参加費", "fee","text")}
                             {this.renderEventInput("募集人数", "max_member","text")}
                         </div>
                     </div>
                     <div className="Right-side-content">
-                        <Calendar />
+                        <Calendar callMethod={(valueDate) => this.changeDate(valueDate)}/>
                         <div className="Button-submit">
                             <button type="submit">募集開始</button>
                         </div>
@@ -110,4 +142,4 @@ class CreateEvent extends Component {
     }
 }
 
-export default CreateEvent;
+export default withRouter(CreateEvent);
