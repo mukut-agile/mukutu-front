@@ -74,3 +74,26 @@ export const Saturday = styled.p`
     font-weight: bold;
     font-size: 18px;
 `
+export const RadioButtonWrapper = styled.div`
+    margin: 10px 5px 0px 5px;
+`
+export const Category = styled.p`
+    font-weight: bold;
+    margin:0px;
+`
+
+export const RadioCategoryWrapper = styled.div`
+    padding-top: 5px;
+`
+export const RadioCategoryName = styled.div`
+    font-weight: bold;
+    margin-left: 10px
+`
+export const RadioButtons = styled.div`
+    margin: 0px 0px;
+
+`
+export const RadioLabel = styled.label`
+    font-size: 15px;
+    margin-left: 10px
+`

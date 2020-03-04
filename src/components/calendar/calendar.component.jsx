@@ -1,61 +1,119 @@
 import React from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
-import {CalendarContainer, CalendarMonth, Month, Samples, Sample0, Sample1, Sample2, Sample3, Sample4, CalendarDays, CalendarDay, Sunday, WeekDays, Saturday} from './calendar.styles';
+import {CalendarContainer, CalendarMonth, Month, Samples, Sample0, Sample1, Sample2, Sample3, Sample4, CalendarDays, CalendarDay, Sunday, WeekDays, Saturday, RadioButtonWrapper,　Category, RadioCategoryWrapper, RadioCategoryName, RadioButtons, RadioLabel} from './calendar.styles';
 import calendarData from './calendar-data.js';
 
 class Calendar extends React.Component {
     constructor(props) {
         super(props);
             this.state = {
-            radio: [
-                {cd:'red',   name:"女性", checked:false,},
-                {cd:'blue',  name:"男性", checked:false,},
-                {cd:'black', name:"全体", checked:true,}
+            radioGender: [
+                {name:"選択なし", checked:true,},
+                {name:"男性", checked:false,},
+                {name:"女性", checked:false}
             ],
-            lastclick: null,  //最後に選択された色を入れる
+            radioHobby: [
+                {name:"全て", checked:true,},
+                {name:"スポーツ", checked:false,},
+                {name:"レジャー", checked:false},
+                {name:"街コン", checked:false,},
+                {name:"ライブ", checked:false},
+                {name:"勉強会", checked:false,},
+            ],
         };
-        this.handleRadioClick = this.handleRadioClick.bind(this);
+        this.handleRadioGenderClick = this.handleRadioGenderClick.bind(this);
+        this.handleRadioHobbyClick = this.handleRadioHobbyClick.bind(this);
     }
 
     changeCalendar(){
-        if(this.state.radio[0].checked) {
-            return calendarData[0];
-        }else if(this.state.radio[1].checked) {
-            return calendarData[1];
-        }else if(this.state.radio[2].checked){
-            return calendarData[2];
+        if(this.state.radioGender[0].checked && this.state.radioHobby[0].checked) {
+            return calendarData[0][0];
+        }else if(this.state.radioGender[0].checked && this.state.radioHobby[1].checked) {
+            return calendarData[0][1];
+        }else if(this.state.radioGender[0].checked && this.state.radioHobby[2].checked) {
+            return calendarData[0][2];
+        }else if(this.state.radioGender[0].checked && this.state.radioHobby[3].checked) {
+            return calendarData[0][3];
+        }else if(this.state.radioGender[0].checked && this.state.radioHobby[4].checked) {
+            return calendarData[0][4];
+        }else if(this.state.radioGender[0].checked && this.state.radioHobby[5].checked) {
+            return calendarData[0][5];
+        }else if(this.state.radioGender[1].checked && this.state.radioHobby[0].checked) {
+            return calendarData[1][0];
+        }else if(this.state.radioGender[1].checked && this.state.radioHobby[1].checked) {
+            return calendarData[1][1];
+        }else if(this.state.radioGender[1].checked && this.state.radioHobby[2].checked) {
+            return calendarData[1][2];
+        }else if(this.state.radioGender[1].checked && this.state.radioHobby[3].checked) {
+            return calendarData[1][3];
+        }else if(this.state.radioGender[1].checked && this.state.radioHobby[4].checked) {
+            return calendarData[1][4];
+        }else if(this.state.radioGender[1].checked && this.state.radioHobby[5].checked) {
+            return calendarData[1][5];
+        }else if(this.state.radioGender[2].checked && this.state.radioHobby[0].checked){
+            return calendarData[2][0];
+        }else if(this.state.radioGender[2].checked && this.state.radioHobby[1].checked) {
+            return calendarData[2][1];
+        }else if(this.state.radioGender[2].checked && this.state.radioHobby[2].checked) {
+            return calendarData[2][2];
+        }else if(this.state.radioGender[2].checked && this.state.radioHobby[3].checked) {
+            return calendarData[2][3];
+        }else if(this.state.radioGender[2].checked && this.state.radioHobby[4].checked) {
+            return calendarData[2][4];
+        }else if(this.state.radioGender[2].checked && this.state.radioHobby[5].checked) {
+            return calendarData[2][5];
         }
     }
 
-    handleRadioClick(e) {
+    handleRadioGenderClick(e) {
         let name  = e.target.name;
-        let value = this.state.radio.map( (item)=>{
+        let value = this.state.radioGender.map( (item)=>{
             return({
-                cd: item.cd,
                 name: item.name,
-                checked: (item.cd===name)? true:false,
+                checked: (item.name===name)? true:false,
             })
         });
         this.setState({
-            radio: value,
-            lastclick: name,
+            radioGender: value,
+        });
+        this.changeCalendar()
+    }
+
+    handleRadioHobbyClick(e) {
+        let name  = e.target.name;
+        let value = this.state.radioHobby.map( (item)=>{
+            return({
+                name: item.name,
+                checked: (item.name===name)? true:false,
+            })
+        });
+        this.setState({
+            radioHobby: value,
         });
         this.changeCalendar()
     }
 
     render () {
-        const radio = this.state.radio;
-        const listItems = radio.map((r) =>
-        <label key={r.cd.toString()} style={{color: r.cd}}>
+        const listItemsGender = this.state.radioGender.map((r) =>
+        <RadioLabel>
             <input
                 type="radio"
-                name={r.cd}
-                value={r.cd}
+                name={r.name}
                 checked={r.checked}
-                onChange={this.handleRadioClick} />
-            {r.name}<br />
-        </label>
+                onChange={this.handleRadioGenderClick} />
+            {r.name}
+        </RadioLabel>
+        );
+        const listItemsHobby = this.state.radioHobby.map((r) =>
+        <RadioLabel>
+            <input
+                type="radio"
+                name={r.name}
+                checked={r.checked}
+                onChange={this.handleRadioHobbyClick} />
+            {r.name}
+            </RadioLabel>
         );
         return (
             <CalendarContainer>
@@ -109,7 +167,17 @@ class Calendar extends React.Component {
                         </g>
                     )}
                 />
-                <form>{listItems}</form>
+                <RadioButtonWrapper>
+                    <Category>ユーザー</Category>
+                    <RadioCategoryWrapper>
+                        <RadioCategoryName>性別</RadioCategoryName>
+                        <RadioButtons>{listItemsGender}</RadioButtons>
+                    </RadioCategoryWrapper>
+                    <RadioCategoryWrapper>
+                        <RadioCategoryName>趣味</RadioCategoryName>
+                        <RadioButtons>{listItemsHobby}</RadioButtons>
+                    </RadioCategoryWrapper>
+                </RadioButtonWrapper>
             </CalendarContainer>
         );
     };
