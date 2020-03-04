@@ -9,11 +9,20 @@
     margin: 0px auto;
 
 }
+.Event-time {
+  width: 100%;
+  height: 70px;
+  margin: 0px 15px 15px 15px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
 .Left-side-content {
     float: left;
     width: 49%;
     border: solid 1px black;
     border-radius: 10px;
+    margin-bottom: 50px;
 }
 .Right-side-content {
     float: right;
@@ -41,3 +50,8 @@ button:hover {
       background-color: #24d;
 }
 
+.react-calendar-heatmap .color-scale-0 { fill: #FFF; }
+.react-calendar-heatmap .color-scale-1 { fill: #FFD5EC; }
+.react-calendar-heatmap .color-scale-2 { fill: #FF97C2; }
+.react-calendar-heatmap .color-scale-3 { fill: #FF5192; }
+.react-calendar-heatmap .color-scale-4 { fill: #FF0461; }
