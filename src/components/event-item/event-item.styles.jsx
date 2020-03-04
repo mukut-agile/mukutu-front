@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const EventItemContainer = styled.div`
-    width: 15%;
+    width: calc(75% / 5 - 0px);
     height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: solid 1px black;
-    margin: 10px 15px;
+    margin: 10px 2.5%;
 `
 
 export const EventItemBackgroundImageContainer = styled.div`
