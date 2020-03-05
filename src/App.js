@@ -7,8 +7,9 @@ import { handleClientLoad } from "./google/google.utils";
 import Header from './components/header/header.component';
 import HomePage from './pages/homepage/homepage.conponent';
 import SignIn from './pages/sign-in/sign-in.component';
+
 import CommunityPage from './pages/community-page/community-page.component';
-import GoogleCalendarPage from './pages/google-calendar-page/google-calendar-page.component';
+import MyPage from './pages/my-page/my-page.component';
 import CreateEvent from './pages/create-event/create-event';
 
 
@@ -89,8 +90,9 @@ class App extends React.Component {
             path="/event"
             render={() => <CreateEvent handleUpdate={this.handleUpdate}/>}
           />
+
           <Route exact path="/community" component={CommunityPage} />
-          <Route exact path="/mypage" component={GoogleCalendarPage} />
+          <Route exact path="/mypage" component={MyPage} />
         </Switch>
       </div>
     );
