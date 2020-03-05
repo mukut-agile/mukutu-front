@@ -2,11 +2,12 @@ import React from 'react';
 
 import { auth } from '../../firebase/firebase.urils';
 
-import { HeaderContainer, LogoContainer, OptionsContainer, OptionContainer, OptionLogoutContainer } from './header.styles';
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionContainer, OptionLogoutContainer, LogoImageContainer } from './header.styles';
 
 const Header = ({ currentUser }) => (
   <HeaderContainer>
-    <LogoContainer to="/">MUKUT</LogoContainer>
+    <LogoImageContainer />
+    <LogoContainer to="/" />
     <OptionsContainer>
       {currentUser ? (
         <OptionLogoutContainer onClick={() => auth.signOut()}>ログアウト</OptionLogoutContainer>
