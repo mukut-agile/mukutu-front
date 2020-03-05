@@ -98,8 +98,8 @@ class CreateEvent extends Component {
         }
     }
 
-    renderEventInput(label, property, type) {
-        return(<EventInput label={label} type={type} name={property} value={this.state.data.property} onChange={this.handleChange}/>);
+    renderEventInput(label, property, type, placeholder) {
+        return(<EventInput label={label} type={type} name={property} placeholder={placeholder} value={this.state.data.property} onChange={this.handleChange}/>);
     }
 
     renderStartTimeInput(label) {
@@ -119,16 +119,16 @@ class CreateEvent extends Component {
                 <form className="Form-event" action="javascript:void(0)" onSubmit={this.handleSubmit}>
                     <div className="Left-side-content">
                         <div className="Form-wrapper">
-                            {this.renderEventInput("イベント名", "event_title","text")}
+                            {this.renderEventInput("イベント名", "event_title","text", "令和2年 第3回AgileBootCampフットサル大会")}
                             <ShowEventDate eventDate={this.state.data.event_date}/>
                             <div className="Event-time">
                                 {this.renderStartTimeInput("開始時間")}
                                 {this.renderEndTimeInput("終了時間")}
                             </div>
-                            {this.renderEventInput("概要", "overview","text")}
-                            {this.renderEventInput("会場", "place","text")}
-                            {this.renderEventInput("参加費", "fee","text")}
-                            {this.renderEventInput("募集人数", "max_member","text")}
+                            {this.renderEventInput("概要", "overview","text", "毎月恒例のフットサル大会を開催します。")}
+                            {this.renderEventInput("会場", "place","text", "東京都港区赤坂１丁目・・・ ")}
+                            {this.renderEventInput("参加費", "fee","text", "500")}
+                            {this.renderEventInput("募集人数", "max_member","text", "25")}
                         </div>
                     </div>
                     <div className="Right-side-content">

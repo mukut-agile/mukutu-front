@@ -17,6 +17,7 @@ const HomePage = ({ events }) => (
         </HomePageContentSubtitle>
       </HomePageContentContainer>
     </HomePageTopContainer>
+    <h1>イベント一覧</h1>
     <EventList events={events} />
   </HomePageContainer>
 );
