@@ -68,7 +68,7 @@ const MyPage = ({ history }) => (
     <EventScheduleWrapper>
       <Title>参加予定イベント</Title>
       <EventSchedule>3月31日：プログラミング好きによる花見in荒川</EventSchedule>
-      <EventSchedule2>3月27日：プログラミング初学者によるデータベース勉強会in港区）</EventSchedule2>
+      <EventSchedule2>3月27日：プログラミング初学者によるデータベース勉強会in港区</EventSchedule2>
       <EventSchedule>3月24日：令和２年　第３回フットサル大会in渋谷（ミックス）</EventSchedule>
       <EventSchedule2>3月16日：プログラミング初学者によるバックエンド勉強会in港区</EventSchedule2>
       <EventSchedule>3月14日：令和２年　第２回フットサル大会in渋谷（ミックス）</EventSchedule>
