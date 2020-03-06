@@ -12,9 +12,6 @@ const HomePage = ({ events }) => (
         <HomePageContentTitle>
           MUKUTイベント管理サービス
         </HomePageContentTitle>
-        <HomePageContentSubtitle>
-          MUKUTUとはhogefufg
-        </HomePageContentSubtitle>
       </HomePageContentContainer>
     </HomePageTopContainer>
     <h1>イベント一覧</h1>
