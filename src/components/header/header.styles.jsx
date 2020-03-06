@@ -10,8 +10,8 @@ export const HeaderContainer = styled.div`
 `;
 
 export const LogoImageContainer = styled.div`
-  width: 100px;
-  height: 100%;
+  width: 100%;
+  height: 100px;
   background-size: cover;
   background-position: center;
   background-image: url('/logo.png');
